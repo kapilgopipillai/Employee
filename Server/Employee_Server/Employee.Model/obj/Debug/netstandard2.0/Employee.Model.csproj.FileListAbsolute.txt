@@ -1,0 +1,9 @@
+C:\Users\islet\Desktop\kapil\Employee\Employee\Server\Employee_Server\Employee.Model\bin\Debug\netstandard2.0\Employee.Model.deps.json
+C:\Users\islet\Desktop\kapil\Employee\Employee\Server\Employee_Server\Employee.Model\bin\Debug\netstandard2.0\Employee.Model.dll
+C:\Users\islet\Desktop\kapil\Employee\Employee\Server\Employee_Server\Employee.Model\bin\Debug\netstandard2.0\Employee.Model.pdb
+C:\Users\islet\Desktop\kapil\Employee\Employee\Server\Employee_Server\Employee.Model\obj\Debug\netstandard2.0\Employee.Model.AssemblyInfoInputs.cache
+C:\Users\islet\Desktop\kapil\Employee\Employee\Server\Employee_Server\Employee.Model\obj\Debug\netstandard2.0\Employee.Model.AssemblyInfo.cs
+C:\Users\islet\Desktop\kapil\Employee\Employee\Server\Employee_Server\Employee.Model\obj\Debug\netstandard2.0\Employee.Model.csproj.CoreCompileInputs.cache
+C:\Users\islet\Desktop\kapil\Employee\Employee\Server\Employee_Server\Employee.Model\obj\Debug\netstandard2.0\Employee.Model.dll
+C:\Users\islet\Desktop\kapil\Employee\Employee\Server\Employee_Server\Employee.Model\obj\Debug\netstandard2.0\Employee.Model.pdb
+C:\Users\islet\Desktop\kapil\Employee\Employee\Server\Employee_Server\Employee.Model\obj\Debug\netstandard2.0\Employee.Model.csprojAssemblyReference.cache

@@ -5,8 +5,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Writer\" />
-    <Folder Include="Reader\" />
+    <PackageReference Include="Dapper" Version="2.0.78" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Employee.Common\Employee.Common.csproj" />
+    <ProjectReference Include="..\Employee.Entity\Employee.Entity.csproj" />
   </ItemGroup>
 
 </Project>

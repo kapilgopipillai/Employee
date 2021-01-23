@@ -19,6 +19,12 @@ namespace Employee.Core.Mapping
             return result;
         }
 
+        public D Map<S, D>(S src, D dest)
+        {
+            var result = _mapper.Map<S, D>(src, dest);
+            return result;
+        }
+
         public object Map(object source, Type sourceType, Type destinationType)
         {
             var result = _mapper.Map(source, sourceType, destinationType);
@@ -26,5 +32,11 @@ namespace Employee.Core.Mapping
         }
 
         public D Map<D>(object source, Type sourceType) => (D)Map(source, sourceType, typeof(D));
+
+        public D Map<D>(object source)
+        {
+            var result = _mapper.Map<D>(source);
+            return result;
+        }
     }
 }

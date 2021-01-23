@@ -4,6 +4,141 @@
     "C:\\Users\\islet\\Desktop\\kapil\\Employee\\Employee\\Server\\Employee_Server\\Employee_Server\\Employee.Api.csproj": {}
   },
   "projects": {
+    "C:\\Users\\islet\\Desktop\\kapil\\Employee\\Employee\\Server\\Employee_Server\\Employee.Api.Data\\Employee.Api.Data.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\islet\\Desktop\\kapil\\Employee\\Employee\\Server\\Employee_Server\\Employee.Api.Data\\Employee.Api.Data.csproj",
+        "projectName": "Employee.Api.Data",
+        "projectPath": "C:\\Users\\islet\\Desktop\\kapil\\Employee\\Employee\\Server\\Employee_Server\\Employee.Api.Data\\Employee.Api.Data.csproj",
+        "packagesPath": "C:\\Users\\islet\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\islet\\Desktop\\kapil\\Employee\\Employee\\Server\\Employee_Server\\Employee.Api.Data\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\islet\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "projectReferences": {
+              "C:\\Users\\islet\\Desktop\\kapil\\Employee\\Employee\\Server\\Employee_Server\\Employee.Common\\Employee.Common.csproj": {
+                "projectPath": "C:\\Users\\islet\\Desktop\\kapil\\Employee\\Employee\\Server\\Employee_Server\\Employee.Common\\Employee.Common.csproj"
+              },
+              "C:\\Users\\islet\\Desktop\\kapil\\Employee\\Employee\\Server\\Employee_Server\\Employee.Entity\\Employee.Entity.csproj": {
+                "projectPath": "C:\\Users\\islet\\Desktop\\kapil\\Employee\\Employee\\Server\\Employee_Server\\Employee.Entity\\Employee.Entity.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "dependencies": {
+            "Dapper": {
+              "target": "Package",
+              "version": "[2.0.78, )"
+            },
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            },
+            "System.Data.SqlClient": {
+              "target": "Package",
+              "version": "[4.8.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\islet\\Desktop\\kapil\\Employee\\Employee\\Server\\Employee_Server\\Employee.Common\\Employee.Common.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\islet\\Desktop\\kapil\\Employee\\Employee\\Server\\Employee_Server\\Employee.Common\\Employee.Common.csproj",
+        "projectName": "Employee.Common",
+        "projectPath": "C:\\Users\\islet\\Desktop\\kapil\\Employee\\Employee\\Server\\Employee_Server\\Employee.Common\\Employee.Common.csproj",
+        "packagesPath": "C:\\Users\\islet\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\islet\\Desktop\\kapil\\Employee\\Employee\\Server\\Employee_Server\\Employee.Common\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\islet\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "projectReferences": {
+              "C:\\Users\\islet\\Desktop\\kapil\\Employee\\Employee\\Server\\Employee_Server\\Employee.Model\\Employee.Model.csproj": {
+                "projectPath": "C:\\Users\\islet\\Desktop\\kapil\\Employee\\Employee\\Server\\Employee_Server\\Employee.Model\\Employee.Model.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "dependencies": {
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
     "C:\\Users\\islet\\Desktop\\kapil\\Employee\\Employee\\Server\\Employee_Server\\Employee.Core\\Employee.Core.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -12,6 +147,82 @@
         "projectPath": "C:\\Users\\islet\\Desktop\\kapil\\Employee\\Employee\\Server\\Employee_Server\\Employee.Core\\Employee.Core.csproj",
         "packagesPath": "C:\\Users\\islet\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\islet\\Desktop\\kapil\\Employee\\Employee\\Server\\Employee_Server\\Employee.Core\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\islet\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "projectReferences": {
+              "C:\\Users\\islet\\Desktop\\kapil\\Employee\\Employee\\Server\\Employee_Server\\Employee.Api.Data\\Employee.Api.Data.csproj": {
+                "projectPath": "C:\\Users\\islet\\Desktop\\kapil\\Employee\\Employee\\Server\\Employee_Server\\Employee.Api.Data\\Employee.Api.Data.csproj"
+              },
+              "C:\\Users\\islet\\Desktop\\kapil\\Employee\\Employee\\Server\\Employee_Server\\Employee.Entity\\Employee.Entity.csproj": {
+                "projectPath": "C:\\Users\\islet\\Desktop\\kapil\\Employee\\Employee\\Server\\Employee_Server\\Employee.Entity\\Employee.Entity.csproj"
+              },
+              "C:\\Users\\islet\\Desktop\\kapil\\Employee\\Employee\\Server\\Employee_Server\\Employee.Model\\Employee.Model.csproj": {
+                "projectPath": "C:\\Users\\islet\\Desktop\\kapil\\Employee\\Employee\\Server\\Employee_Server\\Employee.Model\\Employee.Model.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[10.1.1, )"
+            },
+            "Microsoft.Extensions.DependencyInjection.Abstractions": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\islet\\Desktop\\kapil\\Employee\\Employee\\Server\\Employee_Server\\Employee.Entity\\Employee.Entity.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\islet\\Desktop\\kapil\\Employee\\Employee\\Server\\Employee_Server\\Employee.Entity\\Employee.Entity.csproj",
+        "projectName": "Employee.Entity",
+        "projectPath": "C:\\Users\\islet\\Desktop\\kapil\\Employee\\Employee\\Server\\Employee_Server\\Employee.Entity\\Employee.Entity.csproj",
+        "packagesPath": "C:\\Users\\islet\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\islet\\Desktop\\kapil\\Employee\\Employee\\Server\\Employee_Server\\Employee.Entity\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -41,14 +252,6 @@
       "frameworks": {
         "netstandard2.0": {
           "dependencies": {
-            "AutoMapper": {
-              "target": "Package",
-              "version": "[10.1.1, )"
-            },
-            "Microsoft.Extensions.DependencyInjection.Abstractions": {
-              "target": "Package",
-              "version": "[5.0.0, )"
-            },
             "NETStandard.Library": {
               "suppressParent": "All",
               "target": "Package",
@@ -154,6 +357,9 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
+              "C:\\Users\\islet\\Desktop\\kapil\\Employee\\Employee\\Server\\Employee_Server\\Employee.Common\\Employee.Common.csproj": {
+                "projectPath": "C:\\Users\\islet\\Desktop\\kapil\\Employee\\Employee\\Server\\Employee_Server\\Employee.Common\\Employee.Common.csproj"
+              },
               "C:\\Users\\islet\\Desktop\\kapil\\Employee\\Employee\\Server\\Employee_Server\\Employee.Core\\Employee.Core.csproj": {
                 "projectPath": "C:\\Users\\islet\\Desktop\\kapil\\Employee\\Employee\\Server\\Employee_Server\\Employee.Core\\Employee.Core.csproj"
               },

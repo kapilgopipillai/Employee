@@ -1,0 +1,9 @@
+C:\Users\islet\Desktop\kapil\Employee\Employee\Server\Employee_Server\Employee.Entity\bin\Debug\netstandard2.0\Employee.Entity.deps.json
+C:\Users\islet\Desktop\kapil\Employee\Employee\Server\Employee_Server\Employee.Entity\bin\Debug\netstandard2.0\Employee.Entity.dll
+C:\Users\islet\Desktop\kapil\Employee\Employee\Server\Employee_Server\Employee.Entity\bin\Debug\netstandard2.0\Employee.Entity.pdb
+C:\Users\islet\Desktop\kapil\Employee\Employee\Server\Employee_Server\Employee.Entity\obj\Debug\netstandard2.0\Employee.Entity.AssemblyInfoInputs.cache
+C:\Users\islet\Desktop\kapil\Employee\Employee\Server\Employee_Server\Employee.Entity\obj\Debug\netstandard2.0\Employee.Entity.AssemblyInfo.cs
+C:\Users\islet\Desktop\kapil\Employee\Employee\Server\Employee_Server\Employee.Entity\obj\Debug\netstandard2.0\Employee.Entity.csproj.CoreCompileInputs.cache
+C:\Users\islet\Desktop\kapil\Employee\Employee\Server\Employee_Server\Employee.Entity\obj\Debug\netstandard2.0\Employee.Entity.dll
+C:\Users\islet\Desktop\kapil\Employee\Employee\Server\Employee_Server\Employee.Entity\obj\Debug\netstandard2.0\Employee.Entity.pdb
+C:\Users\islet\Desktop\kapil\Employee\Employee\Server\Employee_Server\Employee.Entity\obj\Debug\netstandard2.0\Employee.Entity.csprojAssemblyReference.cache

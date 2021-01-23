@@ -2,6 +2,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Employee.Api.Data.Reader;
+using Employee.Api.Data.Writer;
+using Employee.Common;
+using Employee.Core.Domain;
 using Employee.Core.Mapping;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -29,6 +33,10 @@ namespace Employee_Server
             services.AddMvc(option => option.EnableEndpointRouting = false);
 
             services.AddMapping();
+            var databaseSettingsConfig = new DatabaseSettingsConfig
+            {
+                ConnectionString = Configuration["ConnectionString"]
+            };
 
             services.AddMvc();
             services.AddSwaggerGen(c => {
@@ -39,6 +47,15 @@ namespace Employee_Server
                     Description = "ASP.NET Core Web API"
                 });
             });
+
+            services.AddSingleton(databaseSettingsConfig);
+            services.AddSingleton<IObjectMapper, ObjectMapper>();
+
+            services.AddScoped<IDatabaseSettings, DatabaseSettings>();
+            services.AddScoped<IEmployeeWriter, EmployeeWriter>();
+            services.AddScoped<IEmployeeDataWriter, EmployeeDataWriter>();
+            services.AddScoped<IEmployeeReader, EmployeeReader>();
+            services.AddScoped<IEmployeeDataReader, EmployeeDataReader>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -56,9 +73,7 @@ namespace Employee_Server
             });
 
             app.UseHttpsRedirection();
-
             app.UseRouting();
-
             app.UseAuthorization();
 
             //app.UseEndpoints(endpoints =>
