@@ -10,5 +10,6 @@ namespace Employee.Core.Domain
     public interface IEmployeeReader
     {
         Task<EmployeeModel> ReadAsync(Guid Id, CancellationToken cancellationToken);
+        Task<ListQueryResult<EmployeeModel>> ReadAllAsync(CancellationToken cancellationToken);
     }
 }

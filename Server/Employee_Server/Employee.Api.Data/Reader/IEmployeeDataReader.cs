@@ -1,4 +1,5 @@
 ﻿using Employee.Entity;
+using Employee.Model;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -10,5 +11,6 @@ namespace Employee.Api.Data.Reader
     public interface IEmployeeDataReader
     {
         Task<EmployeeEntity> ReadAsync(Guid Id, CancellationToken cancellationToken);
+        Task<ListQueryResult<EmployeeEntity>> ReadAllAsync(CancellationToken cancellationToken);
     }
 }

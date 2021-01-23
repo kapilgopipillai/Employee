@@ -12,7 +12,7 @@ namespace Employee.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class EmployeeController : ControllerBase
+    public class EmployeeController : EmployeeBaseController
     {
         private readonly IEmployeeReader _employeeReader;
         private readonly IEmployeeWriter _employeeWriter;
@@ -23,6 +23,15 @@ namespace Employee.Api.Controllers
         }
 
         [HttpGet]
+        [ProducesResponseType(typeof(ListQueryResult<EmployeeModel>), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public async Task<IActionResult> GetSites(CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var qresult = await _employeeReader.ReadAllAsync(cancellationToken);
+            return Ok(qresult);
+        }
+
+        [HttpGet("{id}")]
         [ProducesResponseType(typeof(EmployeeModel), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<IActionResult> Get(Guid id, CancellationToken cancellationToken = default(CancellationToken))
@@ -51,6 +60,26 @@ namespace Employee.Api.Controllers
             {
                 throw ex;
             }
+        }
+
+        [HttpPut]
+        [ProducesResponseType(StatusCodes.Status202Accepted)]
+        public async Task<IActionResult> Put(
+            Guid id,
+            [FromBody] EmployeeModel employeeModel,
+            CancellationToken cancellationToken = default(CancellationToken))
+        {
+            await _employeeWriter.PutAsync(employeeModel, cancellationToken);
+            return Updated();
+        }
+
+        [HttpDelete]
+        [ProducesResponseType(StatusCodes.Status202Accepted)]
+        [ProducesResponseType(StatusCodes.Status409Conflict)]
+        public async Task<IActionResult> Delete(Guid id, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            await _employeeWriter.DeleteAsync(id, cancellationToken);
+            return Deleted();
         }
     }
 }

@@ -30,5 +30,12 @@ namespace Employee.Core.Domain
             var entry = _objectMapper.Map<EmployeeEntity, EmployeeModel>(model);
             return entry;
         }
+
+        public async Task<ListQueryResult<EmployeeModel>> ReadAllAsync(CancellationToken cancellationToken)
+        {
+            var model = await _employeeDataReader.ReadAllAsync(cancellationToken);
+            var entry = _objectMapper.Map<ListQueryResult<EmployeeEntity>, ListQueryResult<EmployeeModel>>(model);
+            return entry;
+        }
     }
 }

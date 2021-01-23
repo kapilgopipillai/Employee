@@ -83,8 +83,7 @@ namespace Employee.Api.Data.Writer
                     employeeEntity.State,
                     employeeEntity.PostalCode,
                     employeeEntity.Notes,
-                    employeeEntity.Disabled
-                    ,
+                    employeeEntity.Disabled,
                     employeeEntity.Created,
                     employeeEntity.CreatedBy,
                     employeeEntity.Modified,
