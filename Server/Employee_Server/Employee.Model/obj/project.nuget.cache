@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "VADrEJ30/tQWkuPdQTufwlvLKskSJQnpGG8503upZPvLqqnUL3AWY7cs039NE+YQyf1HJprF4uDD7N2G3YF3gA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\islet\\Desktop\\kapil\\Employee\\Employee\\Server\\Employee_Server\\Employee.Model\\Employee.Model.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\islet\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}
