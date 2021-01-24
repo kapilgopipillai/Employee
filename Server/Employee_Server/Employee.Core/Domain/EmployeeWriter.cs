@@ -28,12 +28,15 @@ namespace Employee.Core.Domain
 
         public async Task<Guid> PostAsync(EmployeeModel employeeModel, CancellationToken cancellationToken)
         {
+            employeeModel.Created = DateTime.UtcNow;
+            employeeModel.Modified = DateTime.UtcNow;
             var EmployeeModel = _objectMapper.Map<EmployeeModel, EmployeeEntity>(employeeModel);
             return await _employeeDataWriter.InsertAsync(EmployeeModel, cancellationToken);
         }
 
         public async Task PutAsync(EmployeeModel employeeModel, CancellationToken cancellationToken)
         {
+            employeeModel.Modified = DateTime.UtcNow;
             var EmployeeModel = _objectMapper.Map<EmployeeModel, EmployeeEntity>(employeeModel);
             await _employeeDataWriter.UpdateAsync(EmployeeModel, cancellationToken);
         }

@@ -8,6 +8,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { CoreModule } from '../core/core.module';
+import {MenuItem} from 'primeng/api'
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import {TableModule} from 'primeng/table';
+import { EmployeeComponent } from './employee/employee.component';
 
 const mainRouts: Route[] = [
   { path: '', component: RootComponent },
@@ -18,7 +23,8 @@ const mainRouts: Route[] = [
 @NgModule({
   declarations: [
     RootShellComponent,
-    RootComponent
+    RootComponent,
+    EmployeeComponent
   ],
   imports: [
     HttpClientModule,
@@ -26,6 +32,13 @@ const mainRouts: Route[] = [
     BrowserModule,
     NgbModule,
     CoreModule,
+
+    CommonModule,
+    FormsModule,
+    TableModule,
+
+
+
     RouterModule.forRoot(mainRouts)
   ],
   bootstrap: [RootShellComponent]

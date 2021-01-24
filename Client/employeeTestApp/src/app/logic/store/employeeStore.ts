@@ -6,10 +6,11 @@ import { map, catchError, finalize } from 'rxjs/operators';
 import { apiBaseUrl, defaultId } from '../../../environments/environment';
 import { EmployeeState } from '../state/employeeState';
 import { IEmployeeModel } from '../model/IEmployeeModel';
+import { IEntryListModel } from '../model/IEntryListModel';
 
 @Injectable()
 export class Employeetore extends BaseStore<EmployeeState> {
-    private _entryType: string = 'uOM';
+    private _entryType: string = 'Employee';
 
     constructor(private _http: HttpClient) {
       super(new EmployeeState());
@@ -31,86 +32,55 @@ export class Employeetore extends BaseStore<EmployeeState> {
       return this.state$.pipe(map(state => state.entry.isBusy));
     }
 
-    // public loaduOMs(query: IUOMListQueryModel): Observable<void> {
+    public loadEmployees(): Observable<void> {
 
-    //   this.notificationService.clear(this._entryType);
-    //   this.setState({
-    //     ...this.state,
-    //     list: {
-    //       ...this.state.list,
-    //       isBusy: true
-    //     }
-    //   });
+      // this.notificationService.clear(this._entryType);
+      this.setState({
+        ...this.state,
+        list: {
+          ...this.state.list,
+          isBusy: true
+        }
+      });
 
-    //   return this._http.get<IListQueryResult<IUOMListModel>>(apiBaseUrl + 'Uom', { responseType: 'json', observe: 'body', params: ListQueryModel2HttpParams(query) })
-    //     .pipe(
-    //       map(res => {
-    //         this.setState({
-    //           ...this.state,
-    //           list: {
-    //             ...this.state.list,
-    //             data: res.payload,
-    //             count: res.totalCount
-    //           }
-    //         });
-    //       }),
-    //       catchError((ex) => {
-    //         this.notificationService.error(HttpErrorResponse2Notification(ex), this._entryType);
-    //         return EMPTY;
-    //       }),
-    //       finalize(() => {
-    //         this.setState({
-    //           ...this.state,
-    //           list: {
-    //             ...this.state.list,
-    //             isBusy: false
-    //           }
-    //         });
-    //       })
-    //     );
-    // }
+      return this._http.get<IEntryListModel<IEmployeeModel>>(apiBaseUrl + 'Employee', { responseType: 'json', observe: 'body' })
+        .pipe(
+          map(res => {
+            debugger;
+            this.setState({
+              ...this.state,
+              list: {
+                ...this.state.list,
+                data: res.payload,
+                count: res.totalCount
+              }
+            });
+          }),
+          catchError((ex) => {
+            // this.notificationService.error(HttpErrorResponse2Notification(ex), this._entryType);
+            return EMPTY;
+          }),
+          finalize(() => {
+            this.setState({
+              ...this.state,
+              list: {
+                ...this.state.list,
+                isBusy: false
+              }
+            });
+          })
+        );
+    }
 
-    // public loaduOMsExcel(query: IUOMListQueryModel): Observable<void> {
-    //   this.notificationService.clear(this._entryType);
-    //   this.setState({
-    //     ...this.state,
-    //     list: {
-    //       ...this.state.list,
-    //       isBusy: true
-    //     }
-    //   });
-
-    //   return this._http.get(apiBaseUrl + 'Uom/excel', { responseType: 'blob', observe: 'response', params: ListQueryModel2HttpParams(query) })
-    //     .pipe(
-    //       map(res => {
-    //         let fileName = GetBlobFileName(res);
-    //         saveAs(res.body, fileName);
-    //       }),
-    //       catchError((ex) => {
-    //         this.notificationService.error(HttpErrorResponse2Notification(ex), this._entryType);
-    //         return EMPTY;
-    //       }),
-    //       finalize(() => {
-    //         this.setState({
-    //           ...this.state,
-    //           list: {
-    //             ...this.state.list,
-    //             isBusy: false
-    //           }
-    //         });
-    //       })
-    //     );
-    // }
-
-    public loadUOM(id: string): Observable<boolean> {
+    public loadEmployee(id: string): Observable<boolean> {
       // this.notificationService.clear(this._entryType);
       if (id === defaultId) {
-        let uOM = <IEmployeeModel>{ id: defaultId };
+        let Employee = <IEmployeeModel>{ id: defaultId };
         this.setState({
           ...this.state,
           entry: {
             ...this.state.entry,
-            data: uOM
+            data: Employee
           }
         });
         return of(true);
@@ -160,7 +130,7 @@ export class Employeetore extends BaseStore<EmployeeState> {
       }
     }
 
-    public createUOM(emp: IEmployeeModel): Observable<boolean> {
+    public createEmployee(emp: IEmployeeModel): Observable<boolean> {
 
       // this.notificationService.clear(this._entryType);
       this.setState({
@@ -199,7 +169,7 @@ export class Employeetore extends BaseStore<EmployeeState> {
         );
     }
 
-    public updateUOM(emp: IEmployeeModel): Observable<boolean> {
+    public updateEmployee(emp: IEmployeeModel): Observable<boolean> {
       // this.notificationService.clear(this._entryType);
       this.setState({
         ...this.state,
@@ -208,7 +178,7 @@ export class Employeetore extends BaseStore<EmployeeState> {
           isBusy: true
         }
       });
-      return this._http.put(apiBaseUrl + 'Employee/' + emp, { responseType: 'json', observe: 'response' }).
+      return this._http.put(apiBaseUrl + 'Employee', emp, { responseType: 'json', observe: 'response' }).
         pipe(
           map((res) => {
             this.setState({
@@ -237,7 +207,7 @@ export class Employeetore extends BaseStore<EmployeeState> {
         );
     }
 
-    public deleteUOM(id: string): Observable<boolean> {
+    public deleteEmployee(id: string): Observable<boolean> {
       // this.notificationService.clear(this._entryType);
       this.setState({
         ...this.state,

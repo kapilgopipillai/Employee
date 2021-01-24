@@ -48,6 +48,16 @@ namespace Employee_Server
                 });
             });
 
+            services.AddCors(options =>
+            {
+                options.AddPolicy("CorsPolicy",
+                    builder => builder.AllowAnyOrigin()
+                     .SetIsOriginAllowed(_ => true)
+                        .AllowAnyMethod()
+                        .AllowAnyHeader()
+                        .WithExposedHeaders("X-Pagination"));
+            });
+
             services.AddSingleton(databaseSettingsConfig);
             services.AddSingleton<IObjectMapper, ObjectMapper>();
 
@@ -75,6 +85,7 @@ namespace Employee_Server
             app.UseHttpsRedirection();
             app.UseRouting();
             app.UseAuthorization();
+            app.UseCors("CorsPolicy");
 
             //app.UseEndpoints(endpoints =>
             //{

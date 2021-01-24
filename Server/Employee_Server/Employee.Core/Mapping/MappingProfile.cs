@@ -15,6 +15,7 @@ namespace Employee.Core.Mapping
             CreateMap<EmployeeModel, EmployeeEntity>();
             CreateMap<EmployeeEntity, EmployeeModel>();
             CreateMap<ListQueryResult<EmployeeEntity>, ListQueryResult<EmployeeModel>>();
+            CreateMap<ListQueryResult<EmployeeModel>, ListQueryResult<EmployeeEntity>>();
         }
 
     }

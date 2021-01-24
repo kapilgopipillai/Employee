@@ -1,4 +1,4 @@
-export const apiBaseUrl = 'https://localhost:44362/api/';
+export const apiBaseUrl = 'https://localhost:44327/api/';
 export const appBaseUrl = '/';
 export const appFullUrl = 'http://localhost:4200/';
 export const defaultId = '00000000-0000-0000-0000-000000000000';

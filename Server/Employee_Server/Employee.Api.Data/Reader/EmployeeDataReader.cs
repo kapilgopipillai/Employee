@@ -48,6 +48,7 @@ namespace Employee.Api.Data.Reader
                 var totalCount = data.Count();
                 var records = data;
                 var result = new ListQueryResult<EmployeeEntity>(records.Cast<EmployeeEntity>(), totalCount);
+
                 return result;
             }
         }

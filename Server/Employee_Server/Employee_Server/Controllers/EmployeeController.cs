@@ -24,11 +24,17 @@ namespace Employee.Api.Controllers
 
         [HttpGet]
         [ProducesResponseType(typeof(ListQueryResult<EmployeeModel>), StatusCodes.Status200OK)]
-        [ProducesResponseType(StatusCodes.Status404NotFound)]
-        public async Task<IActionResult> GetSites(CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<IActionResult> GetEmployees(CancellationToken cancellationToken = default(CancellationToken))
         {
-            var qresult = await _employeeReader.ReadAllAsync(cancellationToken);
-            return Ok(qresult);
+            try
+            {
+                ListQueryResult<EmployeeModel> qresult = await _employeeReader.ReadAllAsync(cancellationToken);
+                return Ok(qresult);
+            }
+            catch(Exception ex)
+            {
+                throw ex;
+            }
         }
 
         [HttpGet("{id}")]
@@ -69,17 +75,31 @@ namespace Employee.Api.Controllers
             [FromBody] EmployeeModel employeeModel,
             CancellationToken cancellationToken = default(CancellationToken))
         {
-            await _employeeWriter.PutAsync(employeeModel, cancellationToken);
-            return Updated();
+            try
+            {
+                await _employeeWriter.PutAsync(employeeModel, cancellationToken);
+                return Updated();
+            }
+            catch(Exception ex)
+            {
+                throw ex;
+            }
         }
 
-        [HttpDelete]
+        [HttpDelete("{id}")]
         [ProducesResponseType(StatusCodes.Status202Accepted)]
         [ProducesResponseType(StatusCodes.Status409Conflict)]
         public async Task<IActionResult> Delete(Guid id, CancellationToken cancellationToken = default(CancellationToken))
         {
-            await _employeeWriter.DeleteAsync(id, cancellationToken);
-            return Deleted();
+            try
+            {
+                await _employeeWriter.DeleteAsync(id, cancellationToken);
+                return Deleted();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
     }
 }
