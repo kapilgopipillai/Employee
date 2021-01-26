@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { MessageService } from 'primeng/api';
 import { IEmployeeModel } from 'src/app/logic/model/IEmployeeModel';
 import { Employeetore } from 'src/app/logic/store/employeeStore';
 import { environment } from 'src/environments/environment';
@@ -22,7 +23,7 @@ export class EmployeeListComponent implements OnInit {
     { field: 'emailAddress', header: 'Email', sortable: false, sortField: 'EmailAddress', visible: true }
   ];
 
-  constructor(public employeetore: Employeetore, private router: Router) {}
+  constructor(public employeetore: Employeetore, private router: Router,private messageService: MessageService) {}
   ngOnInit() {
     this.employeetore.loadEmployees().subscribe(data => {
       this.employeeList = this.employeetore.state.list.data;
@@ -44,6 +45,7 @@ export class EmployeeListComponent implements OnInit {
       this.employeetore.loadEmployees().subscribe(data => {
         this.employeeList = this.employeetore.state.list.data;
         this.totalRecords = this.employeetore.state.list.count;
+        this.messageService.add({severity:'info', summary: 'Info', detail: 'Employee deleted successfully!'});
       });
     });
   }

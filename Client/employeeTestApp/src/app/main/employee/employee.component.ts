@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { MessageService } from 'primeng/api';
 import { IEmployeeModel } from 'src/app/logic/model/IEmployeeModel';
 import { Employeetore } from 'src/app/logic/store/employeeStore';
 
@@ -12,7 +13,7 @@ export class EmployeeComponent implements OnInit {
   employee: IEmployeeModel;
 
 
-  constructor(public employeetore: Employeetore, private router: Router
+  constructor(public employeetore: Employeetore, private router: Router, private messageService: MessageService
   ) {
     this.employee = {} as IEmployeeModel;
   }
@@ -30,12 +31,18 @@ export class EmployeeComponent implements OnInit {
     if(this.employee.id === undefined){
       this.employeetore.createEmployee(this.employee).subscribe(data => {
         this.employeetore.disposeEntry();
-        this.router.navigate(['/']);
+        this.messageService.add({severity:'success', summary: 'Success', detail: 'Employee created successfully!'});
+        setTimeout(()=>{
+          this.router.navigate(['/']);
+        }, 2000);
       });
     } else {
       this.employeetore.updateEmployee(this.employee).subscribe(()=> {
         this.employeetore.disposeEntry();
-        this.router.navigate(['/']);
+        this.messageService.add({severity:'success', summary: 'Success', detail: 'Employee updated successfully!'});
+        setTimeout(()=>{
+          this.router.navigate(['/']);
+        }, 2000);
       });
     }
   }

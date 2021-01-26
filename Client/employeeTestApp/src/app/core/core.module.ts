@@ -2,12 +2,14 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { NgbButtonsModule } from '@ng-bootstrap/ng-bootstrap';
+import { MessageService } from 'primeng/api';
 import { Employeetore } from '../logic/store/employeeStore';
 
 @NgModule
 ({
   providers: [
-    Employeetore
+    Employeetore,
+    MessageService
   ],
   exports: [
     CommonModule,

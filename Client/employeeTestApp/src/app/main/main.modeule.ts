@@ -13,6 +13,7 @@ import { FormsModule } from '@angular/forms';
 import {TableModule} from 'primeng/table';
 import { EmployeeComponent } from './employee/employee.component';
 import { EmployeeListComponent } from './employee/employee.list.component';
+import {ToastModule} from 'primeng/toast';
 
 const mainRouts: Route[] = [
   { path: '', component: RootComponent, children: [
@@ -38,7 +39,7 @@ const mainRouts: Route[] = [
     CommonModule,
     FormsModule,
     TableModule,
-
+    ToastModule,
 
     RouterModule.forRoot(mainRouts)
   ],
