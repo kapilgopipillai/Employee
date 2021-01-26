@@ -31,10 +31,10 @@ namespace Employee.Core.Domain
             return entry;
         }
 
-        public async Task<ListQueryResult<EmployeeModel>> ReadAllAsync(CancellationToken cancellationToken)
+        public async Task<List<EmployeeModel>> ReadAllAsync(CancellationToken cancellationToken)
         {
             var model = await _employeeDataReader.ReadAllAsync(cancellationToken);
-            var entry = _objectMapper.Map<ListQueryResult<EmployeeEntity>, ListQueryResult<EmployeeModel>>(model);
+            var entry = _objectMapper.Map<List<EmployeeEntity>, List<EmployeeModel>>(model);
             return entry;
         }
     }

@@ -43,7 +43,7 @@ export class Employeetore extends BaseStore<EmployeeState> {
         }
       });
 
-      return this._http.get<IEntryListModel<IEmployeeModel>>(apiBaseUrl + 'Employee', { responseType: 'json', observe: 'body' })
+      return this._http.get<IEmployeeModel[]>(apiBaseUrl + 'Employee', { responseType: 'json', observe: 'body' })
         .pipe(
           map(res => {
             debugger;
@@ -51,8 +51,8 @@ export class Employeetore extends BaseStore<EmployeeState> {
               ...this.state,
               list: {
                 ...this.state.list,
-                data: res.payload,
-                count: res.totalCount
+                data: res,
+                count: res.length
               }
             });
           }),

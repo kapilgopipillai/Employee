@@ -28,7 +28,7 @@ namespace Employee.Api.Controllers
         {
             try
             {
-                ListQueryResult<EmployeeModel> qresult = await _employeeReader.ReadAllAsync(cancellationToken);
+                var qresult = await _employeeReader.ReadAllAsync(cancellationToken);
                 return Ok(qresult);
             }
             catch(Exception ex)

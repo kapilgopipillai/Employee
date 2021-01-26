@@ -1,46 +1,137 @@
 
+  <div class="container-fluid">
+    <form novalidate (ngSubmit)="onSubmit()" #employeeForm="ngForm">
 
-  <!-- <div class="container-fluid">
-    <form action="action_page.php">
+
       <div class="row">
-        <div class="col-25">
-          <label for="fname">First Name</label>
+        <div class="col-sm-4 mb-5">
+          <label for="name">Name <span class="asterisk-error">*</span></label>
+          <input
+            class="widthstyle"
+            name="name"
+            noWhiteSpaces
+            type="text"
+            pInputText
+            [(ngModel)]="employee.name"
+            maxlength="50"
+          />
         </div>
-        <div class="col-75">
-          <input type="text" id="fname" name="firstname" placeholder="Your name..">
+        <div class="col-sm-4 mb-5">
+          <label for="name">EmailAddress </label>
+          <input
+            class="widthstyle"
+            name="emailAddress"
+            noWhiteSpaces
+            type="text"
+            pInputText
+            [(ngModel)]="employee.emailAddress"
+            maxlength="50"
+          />
+        </div>
+        <div class="col-sm-4 mb-5">
+          <label for="name">PhoneNumber </label>
+          <input
+            class="widthstyle"
+            name="phoneNumber"
+            noWhiteSpaces
+            type="text"
+            pInputText
+            [(ngModel)]="employee.phoneNumber"
+            maxlength="50"
+          />
         </div>
       </div>
+
       <div class="row">
-        <div class="col-25">
-          <label for="lname">Last Name</label>
+        <div class="col-sm-4 mb-5">
+          <label for="name">City <span class="asterisk-error">*</span></label>
+          <input
+            class="widthstyle"
+            name="city"
+            noWhiteSpaces
+            type="text"
+            pInputText
+            [(ngModel)]="employee.city"
+            maxlength="50"
+          />
         </div>
-        <div class="col-75">
-          <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+        <div class="col-sm-4 mb-5">
+          <label for="name">State </label>
+          <input
+            class="widthstyle"
+            name="state"
+            noWhiteSpaces
+            type="text"
+            pInputText
+            [(ngModel)]="employee.state"
+            maxlength="50"
+          />
+        </div>
+        <div class="col-sm-4 mb-5">
+          <label for="name">PostalCode </label>
+          <input
+            class="widthstyle"
+            name="postalCode"
+            noWhiteSpaces
+            type="text"
+            pInputText
+            [(ngModel)]="employee.postalCode"
+            maxlength="50"
+          />
         </div>
       </div>
+
       <div class="row">
-        <div class="col-25">
-          <label for="country">Country</label>
+        <div class="col-sm-6 mb-5">
+          <label for="name">Address </label>
+          <input
+            class="widthstyle"
+            name="address"
+            noWhiteSpaces
+            type="text"
+            pInputText
+            [(ngModel)]="employee.address"
+            maxlength="50"
+          />
         </div>
-        <div class="col-75">
-          <select id="country" name="country">
-            <option value="australia">Australia</option>
-            <option value="canada">Canada</option>
-            <option value="usa">USA</option>
-          </select>
+        <div class="col-sm-6 mb-5">
+          <label for="name"
+            >Description <span class="asterisk-error">*</span></label
+          >
+          <input
+            class="widthstyle"
+            name="description"
+            noWhiteSpaces
+            type="text"
+            pInputText
+            [(ngModel)]="employee.description"
+            maxlength="50"
+          />
         </div>
       </div>
+
       <div class="row">
-        <div class="col-25">
-          <label for="subject">Subject</label>
-        </div>
-        <div class="col-75">
-          <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+        <div class="col-sm-12 mb-5">
+          <label for="name">Notes </label>
+          <input
+            class="widthstyle"
+            name="notes"
+            noWhiteSpaces
+            type="text"
+            pInputText
+            [(ngModel)]="employee.notes"
+            maxlength="50"
+          />
         </div>
       </div>
+
       <div class="row">
-        <input type="submit" value="Submit">
+        <div class="col-sm-2 mb-5">
+          <button type="button" class="btn btn-secondary widthstyle" label="Save" (click)="back()" pButton>Cancel</button>
+        </div>
+        <div class="col-sm-2 mb-5">
+          <button type="submit" class="btn btn-success widthstyle" label="Save" pButton>Save</button>
+        </div>
       </div>
     </form>
-  </div> -->
-
+  </div>

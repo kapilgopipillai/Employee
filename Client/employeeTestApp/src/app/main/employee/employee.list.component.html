@@ -1,0 +1,90 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-12 styler-grid">
+      <button type="button" class="btn btn-primary" pButton icon="pi pi-trash" (click)="addNew()">Add New</button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12">
+
+
+      <p-table class="data-table" #employeeGrid [value]="employeeList"
+           [responsive]="true"
+           [totalRecords]="totalRecords"
+           [rows]="gridSize"
+           [rowsPerPageOptions]="gridSizeOptions"
+           [columns]="columns"
+           [loading]="false"
+           [resetPageOnSort]="false"
+           [paginator]="true"
+           [rowHover]="true"
+           dataKey="id"
+
+           [showCurrentPageReport]="true"
+           currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+          [filterDelay]="0" [globalFilterFields]="['name','EmailAddress']">
+
+
+  <ng-template pTemplate="caption">
+    <div class="p-grid">
+      <div class="p-col-6 p-lg-6 p-xl-6 text-left">
+        Employees
+        </div>
+        <!-- <div class="p-col-6 p-lg-6 p-xl-6 text-right">
+          <div class="ui-inputgroup">
+            <input pInputText type="text" (input)="manufacturerGrid.filterGlobal($event.target.value, 'contains')" placeholder="Global Search" />
+        </div>
+          </div> -->
+        </div>
+    </ng-template>
+
+    <ng-template pTemplate="header" let-columns>
+      <tr  >
+        <ng-container *ngFor="let col of columns">
+          <ng-container *ngIf="col.visible" [ngSwitch]="col.sortable">
+            <th  *ngSwitchCase="true" [pSortableColumn]="col.sortField">
+              {{col.header}}
+              <p-sortIcon [field]="col.sortField"></p-sortIcon>
+            </th>
+            <th *ngSwitchCase="false">
+              {{col.header}}
+            </th>
+          </ng-container>
+        </ng-container>
+        <th style="width:4em"></th>
+      </tr>
+    </ng-template>
+
+    <ng-template pTemplate="body" let-employee let-columns="columns">
+        <tr [pSelectableRow] (dblclick)="onEmployeeDetails(employee.id)">
+        <ng-container *ngFor="let col of columns">
+          <ng-container *ngIf="col.visible">
+            <td>
+              {{employee[col.field]}}
+            </td>
+          </ng-container>
+        </ng-container>
+        <td>
+          <!-- <button class="delete-ico" pButton icon="pi pi-trash" ></button> -->
+          <a (click)="deleteEmployee(employee.id)"><i class="pi pi-trash"></i></a>
+        </td>
+      </tr>
+    </ng-template>
+
+    <ng-template pTemplate="emptymessage" let-columns>
+      <tr>
+        <td [attr.colspan]="columns.length">
+          No records found
+        </td>
+      </tr>
+    </ng-template>
+
+
+  </p-table>
+
+
+
+
+    </div>
+  </div>
+</div>

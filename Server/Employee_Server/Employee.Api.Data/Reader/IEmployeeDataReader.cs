@@ -11,6 +11,6 @@ namespace Employee.Api.Data.Reader
     public interface IEmployeeDataReader
     {
         Task<EmployeeEntity> ReadAsync(Guid Id, CancellationToken cancellationToken);
-        Task<ListQueryResult<EmployeeEntity>> ReadAllAsync(CancellationToken cancellationToken);
+        Task<List<EmployeeEntity>> ReadAllAsync(CancellationToken cancellationToken);
     }
 }

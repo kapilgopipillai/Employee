@@ -35,7 +35,7 @@ namespace Employee.Api.Data.Reader
             }
         }
 
-        public async Task<ListQueryResult<EmployeeEntity>> ReadAllAsync(CancellationToken cancellationToken)
+        public async Task<List<EmployeeEntity>> ReadAllAsync(CancellationToken cancellationToken)
         {
             using (var connection = new SqlConnection(_databaseSettings.Tenant))
             {
@@ -46,10 +46,10 @@ namespace Employee.Api.Data.Reader
 
                 var data = await connection.QueryAsync<EmployeeEntity>(command);
                 var totalCount = data.Count();
-                var records = data;
-                var result = new ListQueryResult<EmployeeEntity>(records.Cast<EmployeeEntity>(), totalCount);
+                var records = data.ToList();
+                //var result = new ListQueryResult<EmployeeEntity>(records.Cast<EmployeeEntity>(), totalCount);
 
-                return result;
+                return records;
             }
         }
     }
